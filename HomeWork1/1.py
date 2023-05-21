@@ -45,13 +45,13 @@ a = int(input('Введите число: '))
 copyA= a
 
 if copyA > 0:
+    textDigit = ""
     sumDigits = 0 
-    digit = ""
     while copyA % 10 != 0:
         sumDigits = sumDigits + copyA % 10
-        digit = str(copyA % 10) + ' + '
+        textDigit = textDigit + str(copyA % 10) + '+'
         copyA = copyA // 10
-    print(f'Сумма цифр числа {a} равняется {sumDigits} ({digit[-len(digit):-1]})')
+    print(f'Сумма цифр числа {a} равняется {sumDigits} ({textDigit[0:len(textDigit)-1]})')
 elif copyA < 0:
     print('Вы ввели отрицательное число, введите положительное')
 else:
