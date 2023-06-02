@@ -34,28 +34,53 @@
 language = int(input('Выберетие язык для игры: введите 0 - если english и 1 - если русский: --> '))
 if language == 0:
     print(f'You have chosen English, enter the word: ')
+    dictionaly_eng = {
+    1 : {'A', 'E', 'I', 'O', 'U', 'L', 'N', 'S', 'T', 'R'},
+    2 : {'D', 'G'},
+    3 : {'B', 'C', 'M', 'P'},
+    4 : {'F' 'H' 'V' 'W' 'Y'},
+    5 : {'K'},
+    8 : {'J', 'X'},
+    10 : {'Q', 'Z'},
+    }
 
-dictionaly_eng = {1 : 'AEIOULNSTR', 2 : 'DG', 3 : 'BCMP', 4 : 'FHVWY', 5 : 'K', 8 : 'JX', 10 : 'QZ'}
+    word_eng = input().upper()
+    sum_word_eng = 0
+    for letter in word_eng:
+        for score, letter_set in dictionaly_eng.items():
+            if letter in letter_set:
+                sum_word_eng += score
+                break
+    print(sum_word_eng)
 
-word_eng = input().upper()
-sum_word_eng = 0
+if language == 1:
+    print(f'Вы выбрали русский язык, введите слово: ')
+    dictionaly_rus = {
+    1:{'А', 'В', 'Е', 'И', 'Н', 'О', 'Р', 'С', 'Т'},
+    2:{'Д', 'К', 'Л', 'М', 'П', 'У'},
+    3:{'Б', 'Г', 'Ё', 'Ь', 'Я'},
+    4:{'Й', 'Ы'},
+    5:{'Ж', 'З', 'Х', 'Ц', 'Ч'},
+    8:{'Ш', 'Э', 'Ю'},
+    10:{'Ф', 'Щ', 'Ъ'}
+    }
 
-for letter in word_eng:
-    for key, val in dictionaly_eng.items():
-        if letter in dictionaly_eng:
-            sum_word_eng += value
-            break
-print(sum_word_eng)
+    word_rus = input().upper()
+    sum_word_rus = 0
+    for letter in word_rus:
+        for score, letter_set in dictionaly_rus.items():
+            if letter in letter_set:
+                sum_word_rus += score
+                break
+    print(sum_word_rus)
 
 
 
 
-# if word[0].lower() in eng:
-#     summa = 0
-#     for letter in word:
-#         for key, value in list_English.items():
-#             if letter.upper() in value:
-#                 summa += key
+
+
+
+
 
 
 
