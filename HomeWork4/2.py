@@ -12,34 +12,26 @@
 # Input1: 11, 92, 1, 42, 15, 12, 11, 81
 # Output1: Макс. кол-во ягод 184, собрано для куста 1
 
-# bushes = int(input("Введите количество кустов: "))
-# number_berries = []
+bush = int(input('Введите число кустов: '))
+bushes_list = []
+for i in range(bush):
+    bushes_list.append(int(input(f'Укажите число ягод на {i + 1} кусте: ')))
+count = 0
+max_sum = 0
 
-# for i in range(bushes):
-#     number_berries.append(int(input(f'Введите количество ягод на {i+1} кусте: ')))
-# print(number_berries)
+if len(bushes_list) <= 3:
+    for i in bushes_list:
+        count += i
+    print(f'Сумма ягод на кустах составляет {count}')
+else:
+    for i in range(len(bushes_list)):
+        if i + 1 == len(bushes_list):
+            if bushes_list[i - 1] + bushes_list[i] + bushes_list[0] > max_sum:
+                count = i + 1
+                max_sum = bushes_list[i - 1] + bushes_list[i] + bushes_list[0]
+        else:
+            if bushes_list[i] + bushes_list[i - 1] + bushes_list[i + 1] > max_sum:
+                count = i + 1
+                max_sum = bushes_list[i] + bushes_list[i - 1] + bushes_list[i + 1]
 
-bushes = 8
-num_berries = [11, 92, 1, 42, 15, 12, 11, 81]
-
-for i in range(len(num_berries)-1):
-    max_sum = 0
-    bush = 0
-
-    if i == 0:
-        berries_sum = num_berries[i] + num_berries[i+1] + num_berries[len(num_berries)-1]
-        if berries_sum > max_sum:
-            max_sum = berries_sum
-            bush = i
-    if i == (len(num_berries)-1):
-        berries_sum = num_berries[i] + num_berries[i-1] + num_berries[0]
-        if berries_sum > max_sum:
-            max_sum = berries_sum
-            bush = i
-    else:
-        berries_sum = num_berries[i] + num_berries[i-1] + num_berries[i+1]
-        if berries_sum > max_sum:
-            max_sum = berries_sum
-            bush = i
-
-print(f'Максимальное количество ягод {max_sum} будет собрано с {i+1} куста')
+    print(f'Максимальное число ягод составляет {max_sum} ягод, собрано для куста {count}.')
