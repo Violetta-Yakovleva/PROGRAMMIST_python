@@ -129,17 +129,17 @@
 5020 5564
 6232 6368'''
 
-def delitel(number: int)-> int:
-    sum_del = 0
-    for el in range(1, number):
-        if number % el == 0:
-            sum_del += el
-    return sum_del
-
-def frendly(number: int) -> None:
-    for el in range(number + 1):
-        second_number = delitel(el)
-        if el < second_number and el == delitel(second_number):
-            print(el, second_number)
-
-frendly(10000)
+# def delitel(number: int)-> int:
+#     sum_del = 0
+#     for el in range(1, number):
+#         if number % el == 0:
+#             sum_del += el
+#     return sum_del
+#
+# def frendly(number: int) -> None:
+#     for el in range(number + 1):
+#         second_number = delitel(el)
+#         if el < second_number and el == delitel(second_number):
+#             print(el, second_number)
+#
+# frendly(10000)
